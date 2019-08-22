@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 export default class NewsImage extends Component {
   render() {
-    console.log("image", this.props);
     return (
       <div
         style={{

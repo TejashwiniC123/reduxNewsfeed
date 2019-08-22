@@ -15,7 +15,7 @@ export function newsSuccess(data) {
   return {
     type: NEWS_SUCCESS,
     status: SUCCESS,
-    newsdata: data
+    newsData: data
   };
 }
 
@@ -23,7 +23,7 @@ export function newsFailure(error) {
   return {
     type: NEWS_FAILURE,
     status: FAILURE,
-    usererror: error
+    userError: error
   };
 }
 
@@ -31,12 +31,16 @@ export function news() {
   return async dispatch => {
     try {
       dispatch(newsRequesting());
+
+      const query = "bitcoin";
+      const fromDate = "2019-07-22";
+      const sortBy = "publishedAt";
+      const apiKey = "2bc27b730da541a3ae72aafa21b3f1fe";
       const result = await fetch(
-        "https://newsapi.org/v2/everything?q=bitcoin&from=2019-07-22&sortBy=publishedAt&apiKey=2bc27b730da541a3ae72aafa21b3f1fe"
+        `https://newsapi.org/v2/everything?q=${query}&from=${fromDate}&sortBy=${sortBy}&apiKey=${apiKey}`
       );
 
       const resultJson = await result.json();
-      console.log(resultJson);
       if (resultJson.error) {
         throw new Error(resultJson.error);
       }

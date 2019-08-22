@@ -19,14 +19,14 @@ const newsdetails = (
       return Object.assign({}, state, {
         status: action.status,
         loading: false,
-        newsData: action.newsdata
+        newsFeedData: action.newsData
       });
 
     case newsAction.FAILURE:
       return Object.assign({}, state, {
         status: action.status,
         loading: false,
-        error: action.usererror
+        error: action.userError
       });
     default:
       return state;

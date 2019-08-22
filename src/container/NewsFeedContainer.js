@@ -5,7 +5,7 @@ import NewsFeed from "../component/NewsFeed";
 
 const DispatchToProps = dispatch => {
   return {
-    NewsData: () => {
+    data: () => {
       dispatch(news());
     }
   };
@@ -13,7 +13,7 @@ const DispatchToProps = dispatch => {
 
 const StateToProps = state => {
   return {
-    newsfeed: state
+    newsFeed: state
   };
 };
 
