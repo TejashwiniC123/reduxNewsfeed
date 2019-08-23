@@ -11,6 +11,7 @@ export default class NewsFeed extends Component {
       <div className={styles.base}>
         {this.props.newsFeed &&
           this.props.newsFeed.newsFeedData &&
+          this.props.newsFeed.newsFeedData.articles &&
           this.props.newsFeed.newsFeedData.articles.map(news => (
             <News
               image={news.urlToImage}
