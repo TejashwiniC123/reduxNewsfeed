@@ -11,7 +11,7 @@ const dispatchToProps = dispatch => {
   };
 };
 
-const StateToProps = state => {
+const stateToProps = state => {
   return {
     newsFeed: state
   };
@@ -19,7 +19,7 @@ const StateToProps = state => {
 
 const NewsFeedContainer = withRouter(
   connect(
-    StateToProps,
+    stateToProps,
     dispatchToProps
   )(NewsFeed)
 );
