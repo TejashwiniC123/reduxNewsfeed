@@ -27,13 +27,13 @@ export function newsFailure(error) {
   };
 }
 
-export function news() {
+export function getNewsData() {
   return async dispatch => {
     try {
       dispatch(newsRequesting());
 
       const query = "bitcoin";
-      const fromDate = "2019-07-22";
+      const fromDate = "2019-07-23";
       const sortBy = "publishedAt";
       const apiKey = "2bc27b730da541a3ae72aafa21b3f1fe";
       const result = await fetch(
